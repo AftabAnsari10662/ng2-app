@@ -12,7 +12,18 @@
         <tr *ngFor="let movie of movies">
             <td>{{ movie.title}}</td>
             <td>{{ movie.releaseYear}}</td>
-            <td></td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-pencil">
+                        </span>
+                </button>
+                    <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove">
+                        </span>
+                </button>
+                </div>
+            </td>
         </tr>
     </table>
 </div>

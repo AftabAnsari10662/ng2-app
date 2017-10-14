@@ -2,6 +2,8 @@ import { Component } from '@angular/core'
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Movie } from "./movie.model"
+
+import { MovieData } from "./movie.service";
 @Component({
     selector: 'movie-list',
     templateUrl: 'app/movie-list.component.html'
@@ -9,13 +11,12 @@ import { Movie } from "./movie.model"
 
 @Injectable()
 export class MovieListComponent {
-    movies: any;
-    constructor(private httpClient: HttpClient) {
-        this.httpClient.get("app/movies.json")
-            .subscribe(data => {
-                this.movies = data;
-                console.log(this.movies);
-            });
+    movies: Movie[];
+     error: any;
+    constructor(private httpClient: HttpClient, movieData: MovieData) {
+        movieData.getAllMovies()
+            .subscribe(movies => this.movies = movies,
+            error => this.error = error);
     }
 
 }

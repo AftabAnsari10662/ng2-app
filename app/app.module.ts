@@ -9,11 +9,13 @@ import { RouterModule } from '@angular/router';
 import { MovieListComponent } from "./movie-list.component";
 import { CreateMovieComponet } from "./movie-create.component"
 
+import { MovieData } from "./movie.service";
+
 @NgModule({
     imports:
     [
         BrowserModule,
-        HttpClientModule,
+        HttpModule,
         FormsModule,
         RouterModule.forRoot([
             {
@@ -31,6 +33,8 @@ import { CreateMovieComponet } from "./movie-create.component"
         ])
     ],
     declarations: [AppComponent, CreateMovieComponet, MovieListComponent],
+    providers:[MovieData],
     bootstrap: [AppComponent],
+
 })
 export class AppModule { }
