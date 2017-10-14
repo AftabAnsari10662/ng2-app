@@ -17,20 +17,19 @@
     </table>
 </div>
 
-<h1>Create Movie</h1>
-<hr>
-<div class="col-md-4">
-    <form autocomplete="off" (ngSubmit)="createMovie(movieForm.values)" #movieForm="ngForm">
-        <div class="form-group">
-            <label for="userName">Title:</label>
-            <input (ng-model)="title" id="userName" type="text" class="form-control" placeholder="title..." />
-        </div>
-        <div class="form-group">
-            <label for="password">release Year:</label>
-            <input (ng-model)="releaseYear" id="password" class="form-control" placeholder="Release Year..." />
-        </div>
 
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-default">Cancel</button>
+<div class="col-md-4">
+    <h1>Create Movie</h1>
+    <form >
+        <div class="form-group"><label for="">Title</label>
+            <input type="text" class="form-control"></div>
+        <div class="form-group">
+            <label for="">Release Year</label>
+            <input type="text" class="form-control">
+        </div>
+        <button class="btn btn-success">
+            Save</button>
+        <button class="btn btn-default">
+                Cancel</button>
     </form>
 </div>
