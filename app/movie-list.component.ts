@@ -12,7 +12,7 @@ import { MovieData } from "./movie.service";
 @Injectable()
 export class MovieListComponent {
     movies: Movie[];
-     error: any;
+    error: any;
     constructor(private httpClient: HttpClient, movieData: MovieData) {
         movieData.getAllMovies()
             .subscribe(movies => this.movies = movies,

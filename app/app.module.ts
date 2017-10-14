@@ -15,7 +15,7 @@ import { MovieData } from "./movie.service";
     imports:
     [
         BrowserModule,
-        HttpModule,
+        HttpClientModule,
         FormsModule,
         RouterModule.forRoot([
             {
