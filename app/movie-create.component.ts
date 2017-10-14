@@ -4,14 +4,15 @@ import { HttpClient } from "@angular/common/http"
 import { Movie } from "./movie.model"
 @Component({
   selector: 'movie-create',
-  templateUrl: 'app/movie-create.component.html'
+  templateUrl: 'app/movie-create.component.html',
+  styleUrls: ['app/movie-create.component.css']
 })
 
 @Injectable()
 export class CreateMovieComponet {
- model:Movie;
+  model: Movie;
   constructor(private httpClient: HttpClient) {
-    this.model = new Movie("","");
+    this.model = new Movie("", "");
   }
 
   createMovie(formValues) {
