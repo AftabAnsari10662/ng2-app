@@ -19,4 +19,8 @@ export class AppComponent {
         console.log(this.movies); 
       });
   }
+
+  createMovie(formValues){
+    console.log(formValues.value);
+  }
 }

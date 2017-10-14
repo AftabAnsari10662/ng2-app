@@ -1,15 +1,36 @@
-<div>
-    
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th></th>
-        </tr>
+<div class="col-md-4">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th></th>
+            </tr>
+        </thead>
+
         <tr *ngFor="let movie of movies">
             <td>{{ movie.title}}</td>
             <td>{{ movie.releaseYear}}</td>
             <td></td>
         </tr>
     </table>
+</div>
+
+<h1>Create Movie</h1>
+<hr>
+<div class="col-md-4">
+    <form autocomplete="off" (ngSubmit)="createMovie(movieForm.values)" #movieForm="ngForm">
+        <div class="form-group">
+            <label for="userName">Title:</label>
+            <input (ng-model)="title" id="userName" type="text" class="form-control" placeholder="title..." />
+        </div>
+        <div class="form-group">
+            <label for="password">release Year:</label>
+            <input (ng-model)="releaseYear" id="password" class="form-control" placeholder="Release Year..." />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-default">Cancel</button>
+    </form>
 </div>
