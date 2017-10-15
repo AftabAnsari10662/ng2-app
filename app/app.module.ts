@@ -10,6 +10,7 @@ import { MovieListComponent } from "./movie-list.component";
 import { CreateMovieComponet } from "./movie-create.component"
 
 import { MovieData } from "./movie.service";
+import { MovieGuardService} from "./movie-guard.service";
 
 @NgModule({
     imports:
@@ -32,12 +33,19 @@ import { MovieData } from "./movie.service";
             },
             {
                 path:"movies/edit/:id",
-                component:CreateMovieComponet
+                component:CreateMovieComponet,
+                canActivate:[MovieGuardService]
+            },
+            {
+                path:"", redirectTo:"movies", pathMatch:"full"
+            },
+            {
+                path:"**", redirectTo:"movies", pathMatch:"full"
             }
         ])
     ],
     declarations: [AppComponent, CreateMovieComponet, MovieListComponent],
-    providers:[MovieData],
+    providers:[MovieData, MovieGuardService],
     bootstrap: [AppComponent],
 
 })
