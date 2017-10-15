@@ -1,0 +1,44 @@
+<div class="panel panel-primary">
+    <div class="panel-header">
+        <span>
+            <ng-content select="header"></ng-content>
+        </span>
+    </div>
+    <div class="panel-body">
+        <ng-content></ng-content>
+        Title: {{movie.title}} releaseYear: {{movie.releaseYear}}
+        <ng-content select="main"></ng-content>
+    </div>
+    <div class="panel-footer">
+        <button (click)="movie.increaseRating()" class="btn btn-primary">+</button>
+        <button (click)="movie.decreaseRating()" class="btn btn-primary">-</button>
+        <a [routerLink]="['/movies/detail', movie.id]" class="btn btn-primary">
+            Details
+         </a>
+        <a [routerLink]="['/movies/edit', movie.id]" class="btn btn-primary">
+            Edit
+         </a>
+    </div>
+</div>
+
+
+
+<!-- <td>{{ movie.title}}</td>
+<td>{{ movie.releaseYear}}</td>
+<td>
+    <div class="btn-group">
+        <button class="btn btn-default" [routerLink]="['./details', movie.id]">
+                        <span class="glyphicon glyphicon-zoom-in">
+
+                        </span>
+                    </button>
+        <button class="btn btn-default" [routerLink]="['/movies/edit', movie.id]">
+                    <span class="glyphicon glyphicon-pencil">
+                        </span>
+                </button>
+        <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove">
+                        </span>
+                </button>
+    </div>
+</td> -->

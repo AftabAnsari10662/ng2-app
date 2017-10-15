@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <h1>Movie List</h1>
+    <!-- <h1>Movie List</h1>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -10,27 +10,15 @@
         </thead>
 
         <tr *ngFor="let movie of movies">
-            <td>{{ movie.title}}</td>
-            <td>{{ movie.releaseYear}}</td>
-            <td>
-                <div class="btn-group">
-                    <button class="btn btn-default" [routerLink]="['./details', movie.id]">
-                        <span class="glyphicon glyphicon-zoom-in">
-
-                        </span>
-                    </button>
-                    <button class="btn btn-default" [routerLink]="['/movies/edit', movie.id]">
-                    <span class="glyphicon glyphicon-pencil">
-                        </span>
-                </button>
-                    <button class="btn btn-default">
-                    <span class="glyphicon glyphicon-remove">
-                        </span>
-                </button>
-                </div>
-            </td>
+          <movie-panel [movie]="movie"></movie-panel>
         </tr>
-    </table>
+    </table> -->
+
+    <div *ngFor="let movie of movies">
+        <movie-panel [movie]="movie">
+            <header>{{movie.title}}</header>
+        </movie-panel>
+    </div>
 </div>
 
 <div class="col-md-4">
