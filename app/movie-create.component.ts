@@ -1,5 +1,4 @@
-import { Component } from '@angular/core'
-import { Injectable } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core'
 import { HttpClient } from "@angular/common/http"
 import { Movie } from "./movie.model"
 
@@ -12,24 +11,25 @@ import { Router } from "@angular/router";
 })
 
 @Injectable()
-export class CreateMovieComponet {
+export class CreateMovieComponet implements OnInit {
   model: Movie;
   movieId: string;
   constructor(
     private httpClient: HttpClient,
     private route: ActivatedRoute,
     private router: Router) {
+  }
 
+  ngOnInit() {
     this.model = new Movie("", "");
     this.movieId = this.route.snapshot.paramMap.get("id");
-    // alert(this.movieId);
 
   }
 
   createMovie(formValues) {
     console.log(formValues.value);
   }
-  goToMovieList(){
+  goToMovieList() {
     this.router.navigate(["movies"]);
   }
 }
