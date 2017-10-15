@@ -14,7 +14,7 @@
             <td>{{ movie.releaseYear}}</td>
             <td>
                 <div class="btn-group">
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" [routerLink]="['/movies/edit', movie.id]">
                     <span class="glyphicon glyphicon-pencil">
                         </span>
                 </button>

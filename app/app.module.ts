@@ -29,6 +29,10 @@ import { MovieData } from "./movie.service";
             {
                 path: "movies",
                 component: MovieListComponent
+            },
+            {
+                path:"movies/edit/:id",
+                component:CreateMovieComponet
             }
         ])
     ],
