@@ -1,9 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core'
-import { HttpClient } from "@angular/common/http"
 import { Movie } from "./movie.model"
-
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import { MovieData } from "./movie.service";
 @Component({
   selector: 'movie-create',
   templateUrl: 'app/movie-create.component.html',
@@ -15,7 +14,7 @@ export class CreateMovieComponet implements OnInit {
   model: Movie;
   movieId: string;
   constructor(
-    private httpClient: HttpClient,
+    private movieData: MovieData,
     private route: ActivatedRoute,
     private router: Router) {
   }
@@ -28,6 +27,9 @@ export class CreateMovieComponet implements OnInit {
 
   createMovie(formValues) {
     console.log(formValues.value);
+    this.movieData.create(formValues)
+      .subscribe(movie => console.log(movie),
+      error => console.log(error));
   }
   goToMovieList() {
     this.router.navigate(["movies"]);

@@ -13,7 +13,7 @@ import { MovieData } from "./movie.service";
 export class MovieListComponent {
     movies: Movie[];
     error: any;
-    constructor(private httpClient: HttpClient, movieData: MovieData) {
+    constructor(private movieData: MovieData) {
         movieData.getAllMovies()
             .subscribe(movies => this.movies = movies,
             error => this.error = error);

@@ -4,7 +4,7 @@
         <div class="form-group"><label for="">Title</label>
             <input type="text" [(ngModel)]="model.title" name="title" class="form-control" required>
 
-            <div [hidden]="title.vaild || title.pristine" class="alert alert-danger">
+            <div [hidden]="model.title.vaild || model.title.pristine" class="alert alert-danger">
                 Title is required
             </div>
         </div>
@@ -12,7 +12,7 @@
             <label for="">Release Year</label>
             <input type="text" [(ngModel)]="model.releaseYear" name="releaseYear" class="form-control" required>
 
-            <div [hidden]="releaseYear.valid || releaseYear.pristine" class="alert alert-danger">
+            <div [hidden]="model.releaseYear.valid || model.releaseYear.pristine" class="alert alert-danger">
                 Release Year is required
             </div>
         </div>
