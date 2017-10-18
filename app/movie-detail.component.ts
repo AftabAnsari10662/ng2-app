@@ -16,12 +16,16 @@ export class MovieDetailsComponent implements OnInit {
     movieId: string;
     constructor(
         private _router: Router,
-        private _activatedRouter: ActivatedRoute) {
-
-    }
-    ngOnInit() {
-        this.movieId = this._activatedRouter.snapshot.paramMap.get("id");
+        private _activatedRoute: ActivatedRoute) {
+        this._activatedRoute.params.subscribe(p => this.loadMovie(p["id"]));
 
     }
 
+    loadMovie(movieId: any) {
+        this.movieId = movieId;
+    }
+
+    ngOnInit(): void {
+        this.movieId = "";
+    }
 }
