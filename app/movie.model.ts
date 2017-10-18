@@ -1,10 +1,11 @@
 export class Movie{
 
-    public movieId:string;
+    public movieId:number;
     public title:string;
-    public releaseYear:string;
-    constructor(title:string, relaseYear:string){
+    public releaseYear:number;
+    constructor(movieId:number,title:string, releaseYear:number){
+        this.movieId = movieId;
         this.title = title;
-        this.releaseYear = relaseYear;
+        this.releaseYear = releaseYear;
     }
 }

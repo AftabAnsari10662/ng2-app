@@ -4,13 +4,12 @@ import { Observable } from "rxjs/Observable";
 import { Movie } from './movie.model';
 
 export interface IMovie {
-    movieId:number;
+    movieId: number;
     title: string;
     releaseYear: number;
 }
 
 let parseResponse = r => r.json();
-let toMovie = m => new Movie(m.title, m.releaseYear);
 
 let baseUrl = 'http://moviestorecore.azurewebsites.net/api/movies';
 @Injectable()
@@ -20,22 +19,20 @@ export class MovieData {
 
     }
 
-    getById(id: string):Observable<Movie> {
-        return this.http.get<Movie>(`/api/movies/${id}`);
+    getById(id: string): Observable<Movie> {
+        return this.http.get<Movie>(`${baseUrl}/${id}`);
     }
 
     getAllMovies(): Observable<Movie[]> {
         return this.http.get<Movie[]>(baseUrl);
     }
 
-    // save(movie: Movie) {
-    //     return this.http.put("/api/movies", movie)
-    //         .map(parseResponse)
-    //         .map(toMovie);
+    save(movie: Movie) {
+        return this.http.put(`${baseUrl}/${movie.movieId}`, movie);
 
-    // }
+    }
 
-    create(movie: IMovie) {
+    create(movie: Movie) {
         return this.http.post<IMovie>(baseUrl, movie);
     }
 
