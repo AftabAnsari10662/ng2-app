@@ -15,7 +15,7 @@ import { MovieGuardService } from "./movie-guard.service";
 import { MovieDetailsComponent } from "./movie-detail.component";
 import { MoviePanelComponent } from "./movie-panel";
 
-import { routes} from "./routes";
+import { routes } from "./routes";
 
 @NgModule({
     imports:
@@ -23,7 +23,7 @@ import { routes} from "./routes";
         BrowserModule,
         HttpClientModule,
         FormsModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, { useHash: true })
     ],
     declarations: [
         AppComponent,
