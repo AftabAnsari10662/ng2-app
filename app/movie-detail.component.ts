@@ -19,8 +19,8 @@ export class MovieDetailsComponent implements OnInit {
     movieId: string;
     movie: Movie;
     constructor(
-        private _router: Router,
         private _activatedRoute: ActivatedRoute,
+        private _router: Router,
         private _movieData: MovieData) {
         this._activatedRoute.params.subscribe(p => this.loadMovie(p["id"]));
 

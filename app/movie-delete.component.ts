@@ -5,6 +5,7 @@ import { MovieData } from "./movie.service";
 
 import { Movie } from "./movie.model";
 @Component({
+    selector: 'movie-delete',
     templateUrl: "app/movie-delete.component.html"
 })
 
@@ -13,12 +14,12 @@ export class DeleteMovieComponent {
 
     movie: Movie;
     constructor(
-        private activatedRoute: ActivatedRoute,
-        private router: Router,
+        // private activatedRoute: ActivatedRoute,
+        // private router: Router,
         private movieData: MovieData) {
 
-        this.activatedRoute.params
-            .subscribe(param => this.loadMovie(param["id"]));
+        // this.activatedRoute.params
+        //     .subscribe(param => this.loadMovie(param["id"]));
     }
     loadMovie(movieId: string): void {
         this.movieData.getById(movieId)
@@ -27,11 +28,11 @@ export class DeleteMovieComponent {
             }, (error) => console.log(error));
     }
 
-    deleteMovie() {
-        this.movieData.delete(this.movie.movieId)
-            .subscribe((data) => {
-                this.router.navigate(["movies"]);
-            }, (error) => console.log("error"));
-    }
+    // deleteMovie() {
+    //     this.movieData.delete(this.movie.movieId)
+    //         .subscribe((data) => {
+    //             this.router.navigate(["movies"]);
+    //         }, (error) => console.log("error"));
+    // }
 
 }

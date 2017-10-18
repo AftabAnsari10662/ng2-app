@@ -32,7 +32,7 @@ export let routes = [
         canActivate: [MovieGuardService]
     },
     {
-        path: 'movies/delete/:id',
+        path: "movies/delete/:id",
         component: DeleteMovieComponent
     },
     {
