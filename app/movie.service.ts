@@ -36,5 +36,7 @@ export class MovieData {
         return this.http.post<IMovie>(baseUrl, movie);
     }
 
-
+   delete(id:number){
+       return this.http.delete(`${baseUrl}/${id}`);
+   }
 }
