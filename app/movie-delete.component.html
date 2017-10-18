@@ -1,6 +1,6 @@
 <div>
     <h2>
-        Are your sure want to delete the movie
+        Are your sure want to delete the movie?
     </h2>
     <h3>
         {{ movie.title}}
@@ -8,6 +8,10 @@
     <div>
         <button (click)="deleteMovie()" class="btn btn-primary">
             Delete
+        </button>
+
+        <button (click)="goToList()" class="btn btn-default">
+            List
         </button>
     </div>
 </div>

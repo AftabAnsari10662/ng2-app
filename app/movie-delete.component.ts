@@ -1,5 +1,6 @@
 
-import { ActivatedRoute, Router } from "@angular/Router";
+import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { Injectable, Component } from "@angular/core";
 import { MovieData } from "./movie.service";
 
@@ -13,13 +14,13 @@ import { Movie } from "./movie.model";
 export class DeleteMovieComponent {
 
     movie: Movie;
+    movieId: string;
     constructor(
-        // private activatedRoute: ActivatedRoute,
-        // private router: Router,
-        private movieData: MovieData) {
-
-        // this.activatedRoute.params
-        //     .subscribe(param => this.loadMovie(param["id"]));
+        private movieData: MovieData,
+        private route: ActivatedRoute,
+        private router: Router) {
+        this.movieId = this.route.snapshot.paramMap.get("id");
+        this.loadMovie(this.movieId);
     }
     loadMovie(movieId: string): void {
         this.movieData.getById(movieId)
@@ -28,11 +29,14 @@ export class DeleteMovieComponent {
             }, (error) => console.log(error));
     }
 
-    // deleteMovie() {
-    //     this.movieData.delete(this.movie.movieId)
-    //         .subscribe((data) => {
-    //             this.router.navigate(["movies"]);
-    //         }, (error) => console.log("error"));
-    // }
+    deleteMovie() {
+        this.movieData.delete(this.movie.movieId)
+            .subscribe((data) => {
+                this.router.navigate(["movies"]);
+            }, (error) => console.log("error"));
+    }
 
+    goToList(): void {
+        this.router.navigate(["movies"]);
+    }
 }
