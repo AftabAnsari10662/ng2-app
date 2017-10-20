@@ -15,6 +15,7 @@ import { MovieGuardService } from "./movie-guard.service";
 import { MovieDetailsComponent } from "./movie-detail.component";
 import { MoviePanelComponent } from "./movie-panel";
 import { DeleteMovieComponent } from "./movie-delete.component";
+import { NavMenuComponent } from "./navmenu.component";
 
 import { routes } from "./routes";
 
@@ -32,7 +33,8 @@ import { routes } from "./routes";
         MovieListComponent,
         MovieDetailsComponent,
         MoviePanelComponent,
-        DeleteMovieComponent
+        DeleteMovieComponent,
+        NavMenuComponent
     ],
     providers: [MovieData, MovieGuardService],
     bootstrap: [AppComponent],
