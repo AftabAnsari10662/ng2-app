@@ -10,7 +10,7 @@ import { DeleteMovieComponent } from "./movie-delete.component";
 export let routes = [
     {
         path: 'home',
-        component: AppComponent
+        component: MovieListComponent
     },
     {
         path: "createMovies",
