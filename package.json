@@ -2,7 +2,7 @@
   "name": "ng2-fundamentals-demo",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --watch --inline ",
+    "start": "webpack-dev-server",
     "server": "node node_modules/ng2f-server/server.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
